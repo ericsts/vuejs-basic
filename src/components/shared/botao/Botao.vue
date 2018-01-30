@@ -13,24 +13,24 @@ export default {
       required : true
     },
     rotulo : {
-	  type : String,
+      type : String,
       required : true	
     },
-	confirmacao : Boolean,
+    confirmacao : Boolean,
     estilo : String
   },
   methods : {
 
   	disparaAcao(){
 
-		if(this.confirmacao){	  		
-	  		if(confirm('tem certeza?'))  {
-
-	  			this.$emit('botaoAtivado', new Date());
-				return;
-			} 
-		}
-		this.$emit('botaoAtivado', new Date());
+  		if(this.confirmacao){	  		
+        if(confirm('tem certeza?'))  {
+          this.$emit('botaoAtivado', new Date());
+          return;
+        } 
+  		}else{
+    		this.$emit('botaoAtivado', new Date());
+      }
   	}
   },
 
